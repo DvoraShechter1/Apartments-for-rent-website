@@ -11,3 +11,5 @@ const categorySchema = mongoose.Schema({
         require: false
     }]
 })
+
+export default mongoose.model('Category',categorySchema)

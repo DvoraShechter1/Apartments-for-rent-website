@@ -18,10 +18,10 @@ const advetisorSchema = mongoose.Schema({
         type: String,
         require: false
     },
-    extraPhone: [{
+    appartments: [{
         type: mongoose.Types.ObjectId,
         ref:'Appartment',
         require: false
     }]
-
 })
+export default mongoose.model('advertisor',advetisorSchema)

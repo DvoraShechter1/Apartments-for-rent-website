@@ -43,5 +43,5 @@ const appartmentSchema = mongoose.Schema({
         ref:'Advetisor',
         require:true
     }
-
 })
+export default mongoose.model('Appartment',appartmentSchema)

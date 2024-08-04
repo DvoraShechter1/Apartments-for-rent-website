@@ -33,7 +33,7 @@ export const create = (req, res) => {
 export const getWeather = (req, res) => {
 
     const _id = req.params.id
-    const apiKey = '184039779a1b67c084b86ddda6ef2212';
+    const apiKey = process.env.OPEN_WEATHER_MAP_API_KEY;
     const city = ''
     City.findById(_id)
     .then(c => {

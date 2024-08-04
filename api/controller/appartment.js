@@ -24,7 +24,97 @@ export const getById = (req, res) =>{
     })
 }
 
+export const getByCategoryId = (req, res) =>{
+    const _id = req.params.id 
 
+    Appartment.find(item => item.category==_id)
+    .then(ap=>{
+        if(!ap)
+            return res.status(404).send({ error: `appartment not found!` })
+        return res.status(200).send({ap})
+    })
+    .catch(error=>{
+        res.status(500).send({ error: error.message })
+    })
+}
+
+export const getByCityId = (req, res) =>{
+    const _id = req.params.id
+
+    Appartment.find(item => item.city==_id)
+    .then(ap=>{
+        if(!ap)
+            return res.status(404).send({ error: `appartment not found!` })
+        return res.status(200).send({ap})
+    })
+    .catch(error=>{
+        res.status(500).send({ error: error.message })
+    })
+} 
+
+export const getByAdvetisorId = (req, res) =>{
+    const _id = req.params.id
+
+    Appartment.find(item => item.advetisor==_id)
+    .then(ap=>{
+        if(!ap)
+            return res.status(404).send({ error: `appartment not found!` })
+        return res.status(200).send({ap})
+    })
+    .catch(error=>{
+        res.status(500).send({ error: error.message })
+    })
+}
+
+export const getByNumBeds = (req, res) =>{
+    const _numBeds = req.params.numBeds
+
+    Appartment.find(item => item.numBeds==_numBeds)
+    .then(ap=>{
+        if(!ap)
+            return res.status(404).send({ error: `appartment not found!` })
+        return res.status(200).send({ap})
+    })
+    .catch(error=>{
+        res.status(500).send({ error: error.message })
+    })
+}
+
+export const getCheap = (req, res) =>{
+    Appartment.find(item => item.price<2500)
+    .then(ap=>{
+        if(!ap)
+            return res.status(404).send({ error: `appartment not found!` })
+        return res.status(200).send({ap})
+    })
+    .catch(error=>{
+        res.status(500).send({ error: error.message })
+    })
+}
+
+export const getMedium = (req, res) =>{
+    Appartment.find(item => item.price<5000 && item.price>2500)
+    .then(ap=>{
+        if(!ap)
+            return res.status(404).send({ error: `appartment not found!` })
+        return res.status(200).send({ap})
+    })
+    .catch(error=>{
+        res.status(500).send({ error: error.message })
+    })
+}
+
+export const getExpensive = (req, res) =>{
+    Appartment.find(item => item.price>5000)
+    .then(ap=>{
+        if(!ap)
+            return res.status(404).send({ error: `appartment not found!` })
+        return res.status(200).send({ap})
+    })
+    .catch(error=>{
+        res.status(500).send({ error: error.message })
+    })
+}
 
 /////////////////////
 

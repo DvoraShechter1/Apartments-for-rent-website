@@ -1,10 +1,10 @@
 import express from 'express';
-import CityController from '../controllers/city';
-import { checkAuth } from '../../middlewares';
+import {create,getAll,getWeather} from '../controller/city.js';
+import { checkAuth } from '../../middlewares.js';
 const router = express.Router();
 
-router.post('/create', checkAuth,CityController.create)
-router.get('', CityController.getAll)
-router.get('weather/:id', CityController.getWeather)
+router.post('', checkAuth,create)
+router.get('', getAll)
+router.get('weather/:id', getWeather)
 
 export default router

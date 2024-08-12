@@ -1,5 +1,5 @@
 import express from 'express'
-import { login, register } from '../controller/advetisor'
+import { login, register } from '../controller/advetisor.js'
 
 
 const router = express.Router()

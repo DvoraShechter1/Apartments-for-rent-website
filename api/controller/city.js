@@ -1,12 +1,12 @@
 import axios from "axios"
-import City from "../modules/city"
+import City from "../modules/city.js"
 
 export const getAll = (req, res) => {
     City.find()
         .then(cities => {
             res.status(200).send({ cities })
         })
-        .catch(err => {
+        .catch(error => {
             res.status(500).send({ error: error.message })
         })
 }

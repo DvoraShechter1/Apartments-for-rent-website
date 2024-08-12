@@ -1,4 +1,4 @@
-import Advetisor from '../modules/advetisor'
+import Advetisor from '../modules/advetisor.js'
 import jwt from 'jsonwebtoken'
 
 

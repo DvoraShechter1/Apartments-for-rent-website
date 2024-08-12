@@ -1,4 +1,4 @@
-import Category from "../models/category.js"
+import Category from "../modules/category.js"
 
 export const getAll = (req, res) => {
 

@@ -1,7 +1,8 @@
 import express from 'express';
-import CityController from '../controllers/city';
+import {create, getAll, getById} from '../controller/category.js';
+import { checkAuth } from '../../middlewares.js';
 const router = express.Router();
-router.post('/create', CityController.create);
-router.get('/getAll', CityController.getAll);
-router.get('/:id', CityController.getById);
+router.post('',checkAuth ,create);
+router.get('', getAll);
+router.get('/:id', getById);
 export default router

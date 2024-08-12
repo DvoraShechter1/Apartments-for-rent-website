@@ -1,4 +1,4 @@
-import Appartment from '../modules/appartment'
+import Appartment from '../modules/appartment.js'
 
 export const getAll = (req, res) =>{
     Appartment.find()
